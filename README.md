@@ -40,7 +40,6 @@ A minimal entry:
   maintainer:
   repo: https://github.com/your-account/mytool
   app_url:
-  updated: 2026-10-01
   papers:
     - label: Smith et al. 2026
       kind: publication
@@ -86,7 +85,6 @@ Paste the result into `citation`, inside double quotes. Remove any HTML tags (su
 | `maintainer` | no | Contact person, shown as "Contact" |
 | `repo` | no | Source repository URL (GitHub or GitLab) |
 | `app_url` | no | Link to a hosted web app |
-| `updated` | no | Date of the latest release or code change, as `YYYY-MM-DD`. Used for "Recently updated" sorting. |
 | `papers` | no | List of papers, preprints, software records or notes (see below) |
 
 Each item in `papers`:

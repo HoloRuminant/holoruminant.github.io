@@ -27,7 +27,6 @@ layout: default
           <option value="default">Default order</option>
           <option value="name">Name (A to Z)</option>
           <option value="type">Type</option>
-          <option value="updated">Recently updated</option>
         </select>
       </div>
     </form>
@@ -46,7 +45,7 @@ layout: default
       {% assign devs = "" | split: "" %}
       {% for c in site.data.contributors %}{% if c.tools contains tool.name %}{% assign devs = devs | push: c %}{% endif %}{% endfor %}
       {% assign dev_names = devs | map: "name" | join: " " %}
-      <li class="card" id="{{ tool.name | slugify }}" data-index="{{ forloop.index0 }}" data-name="{{ tool.name | downcase | escape }}" data-type="{{ tool.type | downcase }}" data-updated="{{ tool.updated | date: '%Y-%m-%d' }}" data-text="{{ tool.name | append: ' ' | append: tool.description | append: ' ' | append: tool.type | append: ' ' | append: tool.maintainer | append: ' ' | append: dev_names | downcase | escape }}">
+      <li class="card" id="{{ tool.name | slugify }}" data-index="{{ forloop.index0 }}" data-name="{{ tool.name | downcase | escape }}" data-type="{{ tool.type | downcase }}" data-text="{{ tool.name | append: ' ' | append: tool.description | append: ' ' | append: tool.type | append: ' ' | append: tool.maintainer | append: ' ' | append: dev_names | downcase | escape }}">
         <div class="card-body">
           <p class="meta">
             <span class="tag">{{ tool.type }}</span>
@@ -55,11 +54,10 @@ layout: default
           <h3>{{ tool.name }}</h3>
           <p class="description">{{ tool.description }}</p>
 
-          {% if devs.size > 0 or tool.maintainer or tool.updated %}
+          {% if devs.size > 0 or tool.maintainer %}
           <dl class="facts">
             {% if devs.size > 0 %}<div><dt>Developed by</dt><dd>{% for c in devs %}<a href="{{ '/contributors/' | relative_url }}#{{ c.name | slugify }}">{{ c.name }}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}</dd></div>{% endif %}
             {% if tool.maintainer %}<div><dt>Contact</dt><dd>{{ tool.maintainer }}</dd></div>{% endif %}
-            {% if tool.updated %}<div><dt>Updated</dt><dd><time datetime="{{ tool.updated | date: '%Y-%m-%d' }}">{{ tool.updated | date: "%B %Y" }}</time></dd></div>{% endif %}
           </dl>
           {% endif %}
 

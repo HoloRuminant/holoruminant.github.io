@@ -5,7 +5,6 @@
   maintainer:
   repo: https://gitlab.com/oveoyas/nnforge
   app_url:
-  updated: 2026-09-28
   papers:
     - label: Øyås et al. 2024
       kind: preprint
@@ -19,7 +18,6 @@
   maintainer:
   repo: https://github.com/fischuu/Snakebite-Holoruminant-MetaG
   app_url:
-  updated: 2026-08-29
   papers:
     - label: Manuscript in preparation
       kind: in-preparation
@@ -31,7 +29,6 @@
   maintainer:
   repo: https://github.com/cmkobel/CompareM2
   app_url:
-  updated: 2026-09-23
   papers:
     - label: Kobel et al. 2025
       kind: publication
@@ -45,7 +42,6 @@
   maintainer:
   repo: https://github.com/wala-github/Fancy
   app_url:
-  updated: 2026-06-29
   papers:
     - label: Lai et al. 2026
       kind: publication
@@ -59,7 +55,6 @@
   maintainer:
   repo:
   app_url:
-  updated:
   papers: []
 
 - name: Clann Tree Viewer
@@ -69,7 +64,6 @@
   maintainer:
   repo: https://github.com/ChrisCreevey/clann-tree-viewer
   app_url: https://chriscreevey.github.io/clann-tree-viewer/
-  updated: 2026-09-23
   papers:
     - label: Zenodo record
       kind: software
@@ -83,7 +77,6 @@
   maintainer:
   repo: https://github.com/ChrisCreevey/clann-blast-explorer
   app_url: https://chriscreevey.github.io/clann-blast-explorer/
-  updated: 2026-09-23
   papers:
     - label: Zenodo record
       kind: software
@@ -97,7 +90,6 @@
   maintainer:
   repo: https://github.com/ChrisCreevey/clann-pangenome-explorer
   app_url: https://chriscreevey.github.io/clann-pangenome-explorer/
-  updated: 2026-09-23
   papers:
     - label: Zenodo record
       kind: software
@@ -111,7 +103,6 @@
   maintainer:
   repo: https://github.com/ChrisCreevey/clann-edna-explorer
   app_url: https://chriscreevey.github.io/clann-edna-explorer/
-  updated: 2026-09-23
   papers:
     - label: Zenodo record
       kind: software

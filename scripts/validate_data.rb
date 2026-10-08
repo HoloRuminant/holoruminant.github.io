@@ -48,9 +48,6 @@ tools.each_with_index do |t, i|
   if t["status"] == "restricted" && (!blank?(t["repo"]) || !blank?(t["app_url"]))
     errors << "#{label}: restricted tools must not have a repo or app_url"
   end
-  unless blank?(t["updated"]) || t["updated"].is_a?(Date)
-    errors << "#{label}: 'updated' must be a date written as YYYY-MM-DD"
-  end
 
   papers = t["papers"]
   next if papers.nil?

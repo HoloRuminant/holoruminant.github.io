@@ -17,11 +17,6 @@
       type: function (a, b) {
         return a.dataset.type.localeCompare(b.dataset.type, 'en-GB') ||
                a.dataset.name.localeCompare(b.dataset.name, 'en-GB');
-      },
-      updated: function (a, b) {
-        // Newest first; tools without a date go last.
-        return (b.dataset.updated || '').localeCompare(a.dataset.updated || '') ||
-               a.dataset.name.localeCompare(b.dataset.name, 'en-GB');
       }
     };
 
