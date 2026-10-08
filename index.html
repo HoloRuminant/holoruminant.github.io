@@ -10,7 +10,7 @@ layout: default
     <form class="controls" id="controls" hidden onsubmit="return false">
       <div class="field field-search">
         <label for="search">Search tools</label>
-        <input type="search" id="search" autocomplete="off" placeholder="Name, method or keyword">
+        <input type="search" id="search" autocomplete="off" placeholder="Name, method, keyword or person">
       </div>
       <div class="field">
         <label for="type-filter">Type</label>
@@ -19,6 +19,15 @@ layout: default
           {% assign types = site.data.tools | map: "type" | uniq | sort %}
           {% for t in types %}<option value="{{ t | downcase }}">{{ t }}</option>
           {% endfor %}
+        </select>
+      </div>
+      <div class="field">
+        <label for="sort">Sort by</label>
+        <select id="sort">
+          <option value="default">Default order</option>
+          <option value="name">Name (A to Z)</option>
+          <option value="type">Type</option>
+          <option value="updated">Recently updated</option>
         </select>
       </div>
     </form>
@@ -34,7 +43,10 @@ layout: default
 
     <ul class="grid" id="grid">
       {% for tool in site.data.tools %}
-      <li class="card" data-type="{{ tool.type | downcase }}" data-text="{{ tool.name | append: ' ' | append: tool.description | append: ' ' | append: tool.type | append: ' ' | append: tool.maintainer | downcase | escape }}">
+      {% assign devs = "" | split: "" %}
+      {% for c in site.data.contributors %}{% if c.tools contains tool.name %}{% assign devs = devs | push: c %}{% endif %}{% endfor %}
+      {% assign dev_names = devs | map: "name" | join: " " %}
+      <li class="card" id="{{ tool.name | slugify }}" data-index="{{ forloop.index0 }}" data-name="{{ tool.name | downcase | escape }}" data-type="{{ tool.type | downcase }}" data-updated="{{ tool.updated | date: '%Y-%m-%d' }}" data-text="{{ tool.name | append: ' ' | append: tool.description | append: ' ' | append: tool.type | append: ' ' | append: tool.maintainer | append: ' ' | append: dev_names | downcase | escape }}">
         <div class="card-body">
           <p class="meta">
             <span class="tag">{{ tool.type }}</span>
@@ -42,7 +54,14 @@ layout: default
           </p>
           <h3>{{ tool.name }}</h3>
           <p class="description">{{ tool.description }}</p>
-          {% if tool.maintainer %}<p class="maintainer">Contact: {{ tool.maintainer }}</p>{% endif %}
+
+          {% if devs.size > 0 or tool.maintainer or tool.updated %}
+          <dl class="facts">
+            {% if devs.size > 0 %}<div><dt>Developed by</dt><dd>{% for c in devs %}<a href="{{ '/contributors/' | relative_url }}#{{ c.name | slugify }}">{{ c.name }}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}</dd></div>{% endif %}
+            {% if tool.maintainer %}<div><dt>Contact</dt><dd>{{ tool.maintainer }}</dd></div>{% endif %}
+            {% if tool.updated %}<div><dt>Updated</dt><dd><time datetime="{{ tool.updated | date: '%Y-%m-%d' }}">{{ tool.updated | date: "%B %Y" }}</time></dd></div>{% endif %}
+          </dl>
+          {% endif %}
 
           {% if tool.papers and tool.papers.size > 0 %}
           <h4>Publications and records</h4>
@@ -54,6 +73,13 @@ layout: default
                 <span class="doi">DOI: <a href="https://doi.org/{{ p.doi }}">{{ p.doi }}</a></span>
               {% elsif p.url %}<a class="paper-label" href="{{ p.url }}">{{ p.label }}</a> <span class="kind">{{ p.kind }}</span>
               {% else %}<span class="paper-label">{{ p.label }}</span> <span class="kind">{{ p.kind }}</span>{% endif %}
+              {% if p.citation %}
+              <details class="cite">
+                <summary>How to cite<span class="sr-only"> {{ p.label }}</span></summary>
+                <p class="cite-text">{{ p.citation }}</p>
+                <button type="button" class="copy-button" data-copy hidden>Copy citation</button>
+              </details>
+              {% endif %}
             </li>
             {% endfor %}
           </ul>

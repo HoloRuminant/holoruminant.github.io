@@ -3,8 +3,22 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ site.title }}</title>
-  <meta name="description" content="{{ site.description }}">
+  {% if page.title %}{% assign page_title = page.title | append: " · " | append: site.title %}{% else %}{% assign page_title = site.title %}{% endif %}
+  {% assign page_description = page.description | default: site.description %}
+  <title>{{ page_title }}</title>
+  <meta name="description" content="{{ page_description }}">
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="{{ site.title }}">
+  <meta property="og:title" content="{{ page_title }}">
+  <meta property="og:description" content="{{ page_description }}">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <meta property="og:image" content="{{ '/assets/img/social-card.png' | absolute_url }}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="HoloRuminant logo with the title HoloR-tools">
+  <meta property="og:locale" content="en_GB">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="{{ '/assets/img/favicon-32.png' | relative_url }}" sizes="32x32" type="image/png">
   <link rel="icon" href="{{ '/assets/img/icon-192.png' | relative_url }}" sizes="192x192" type="image/png">
   <link rel="apple-touch-icon" href="{{ '/assets/img/apple-touch-icon.png' | relative_url }}">
@@ -14,9 +28,14 @@
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="wrap header-row">
-      <a href="https://holoruminant.eu" class="logo-link">
-        <img src="{{ '/assets/img/holoruminant-logo.png' | relative_url }}" alt="HoloRuminant: understanding microbiomes of the ruminant holobiont (project website)" width="972" height="194">
+      <a href="{{ '/' | relative_url }}" class="logo-link">
+        <img src="{{ '/assets/img/holoruminant-logo.png' | relative_url }}" alt="HoloRuminant tools home" width="972" height="194">
       </a>
+      <nav class="site-nav" aria-label="Main">
+        <a href="{{ '/' | relative_url }}"{% if page.url == "/" %} aria-current="page"{% endif %}>Tools</a>
+        <a href="{{ '/contributors/' | relative_url }}"{% if page.url == "/contributors/" %} aria-current="page"{% endif %}>Contributors</a>
+        <a href="{{ '/about/' | relative_url }}"{% if page.url == "/about/" %} aria-current="page"{% endif %}>About</a>
+      </nav>
       <a class="button button-dark header-button" href="https://holoruminant.eu"><span class="long">HoloRuminant project website</span><span class="short">Project website</span></a>
     </div>
   </header>
@@ -24,10 +43,11 @@
     {{ content }}
   </main>
   <footer class="site-footer">
-    <div class="wrap">
+    <div class="wrap footer-row">
       <p>This project has received funding from the European Union's Horizon 2020 research and innovation programme under grant agreement N° 101000213.</p>
+      <p class="footer-links"><a href="https://github.com/{{ site.repository }}">Source on GitHub</a></p>
     </div>
   </footer>
-  <script src="{{ '/assets/js/filter.js' | relative_url }}"></script>
+  <script src="{{ '/assets/js/site.js' | relative_url }}"></script>
 </body>
 </html>

@@ -5,10 +5,12 @@
   maintainer:
   repo: https://gitlab.com/oveoyas/nnforge
   app_url:
+  updated: 2026-09-28
   papers:
     - label: Øyås et al. 2024
       kind: preprint
       doi: 10.1101/2024.01.26.576649
+      citation: "Øyås, O., Kobel, C. M., Vik, J. O., & Pope, P. B. (2024). Predicting microbial genome-scale metabolic networks directly from 16S rRNA gene sequences. bioRxiv. https://doi.org/10.1101/2024.01.26.576649"
 
 - name: Snakebite-Holoruminant-Meta
   description: A Snakemake metagenomic pipeline covering read-based analysis, contig-based analysis, and MAG assembly and annotation. It uses a broad set of annotators and public databases, and suits users who do not know every individual tool.
@@ -17,6 +19,7 @@
   maintainer:
   repo: https://github.com/fischuu/Snakebite-Holoruminant-MetaG
   app_url:
+  updated: 2026-08-29
   papers:
     - label: Manuscript in preparation
       kind: in-preparation
@@ -28,10 +31,12 @@
   maintainer:
   repo: https://github.com/cmkobel/CompareM2
   app_url:
+  updated: 2026-09-23
   papers:
     - label: Kobel et al. 2025
       kind: publication
       doi: 10.1093/bioinformatics/btaf517
+      citation: "Kobel, C. M., Aho, V. T. E., Øyås, O., Nørskov-Lauritsen, N., Woodcroft, B. J., & Pope, P. B. (2025). CompareM2 is a genomes-to-report pipeline for comparing microbial genomes. Bioinformatics, 41(9). https://doi.org/10.1093/bioinformatics/btaf517"
 
 - name: FANCY
   description: An R package that infers association networks. It combines k-nearest neighbour mutual information (via MRNET) and distance correlation into one hybrid edge score. It was designed for MAG co-abundance networks and works with any numeric feature matrix.
@@ -40,10 +45,12 @@
   maintainer:
   repo: https://github.com/wala-github/Fancy
   app_url:
+  updated: 2026-06-29
   papers:
     - label: Lai et al. 2026
       kind: publication
       doi: 10.12688/openreseurope.24421.1
+      citation: "Lai, W., Leu, A., Hvidsten, T. R., Pope, P. B., & Roehe, R. (2026). Nonlinear network inference reveals two independent axes of ecological organisation in the rumen microbiome. Open Research Europe, 6, 381. https://doi.org/10.12688/openreseurope.24421.1"
 
 - name: CowPI2
   description: A command line tool for functional prediction from 16S rRNA gene microbiome data. It uses curated, environment-specific HoloRuminant MAG data. Described in Deliverable D1.5.
@@ -52,6 +59,7 @@
   maintainer:
   repo:
   app_url:
+  updated:
   papers: []
 
 - name: Clann Tree Viewer
@@ -61,10 +69,12 @@
   maintainer:
   repo: https://github.com/ChrisCreevey/clann-tree-viewer
   app_url: https://chriscreevey.github.io/clann-tree-viewer/
+  updated: 2026-09-23
   papers:
     - label: Zenodo record
       kind: software
       doi: 10.5281/zenodo.22871890
+      citation: "Creevey, C. (2026). ChrisCreevey/clann-tree-viewer: V1.1 (Version V1.1) [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.22871890"
 
 - name: Clann BLAST Explorer
   description: An explorer for BLAST (-outfmt 6/7) and DIAMOND tabular output. It provides hit tables, HSP coverage diagrams, taxonomy assignment, reciprocal best hit analysis and FASTA export. All analysis runs in the browser with no data upload.
@@ -73,10 +83,12 @@
   maintainer:
   repo: https://github.com/ChrisCreevey/clann-blast-explorer
   app_url: https://chriscreevey.github.io/clann-blast-explorer/
+  updated: 2026-09-23
   papers:
     - label: Zenodo record
       kind: software
       doi: 10.5281/zenodo.22871507
+      citation: "Creevey, C. (2026). ChrisCreevey/clann-blast-explorer: Version 1 - First Release (Version V1.0) [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.22871507"
 
 - name: Clann Pangenome Explorer
   description: Joins pangenome matrices from Roary, Panaroo, PIRATE or PanACoTA with gene annotations and CoinFinder results. It summarises core and accessory genome structure, tags AMR or virulence genes and visualises association networks. All analysis runs in the browser.
@@ -85,10 +97,12 @@
   maintainer:
   repo: https://github.com/ChrisCreevey/clann-pangenome-explorer
   app_url: https://chriscreevey.github.io/clann-pangenome-explorer/
+  updated: 2026-09-23
   papers:
     - label: Zenodo record
       kind: software
       doi: 10.5281/zenodo.22871457
+      citation: "Creevey, C. (2026). ChrisCreevey/clann-pangenome-explorer: Version 1 - Frist Release (Version V1.0) [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.22871457"
 
 - name: Clann eDNA Explorer
   description: An explorer for taxonomic classification results from eDNA metabarcoding and metagenomic studies. It accepts Kraken2/Bracken, QIIME 2 and lineage tables, and produces sunburst and Sankey diagrams, heatmaps, diversity indices and similarity measures. All processing runs in the browser.
@@ -97,7 +111,9 @@
   maintainer:
   repo: https://github.com/ChrisCreevey/clann-edna-explorer
   app_url: https://chriscreevey.github.io/clann-edna-explorer/
+  updated: 2026-09-23
   papers:
     - label: Zenodo record
       kind: software
       doi: 10.5281/zenodo.22662075
+      citation: "Creevey, C. (2026). ChrisCreevey/clann-edna-explorer: V1.0 - Initial release (Version V1.0) [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.22662075"

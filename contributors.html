@@ -1,0 +1,49 @@
+---
+layout: default
+title: Contributors
+description: The people who develop and maintain the HoloRuminant tools.
+permalink: /contributors/
+---
+<section class="hero hero-small">
+  <div class="wrap">
+    <p class="eyebrow">HoloRuminant project</p>
+    <h1>Contributors</h1>
+    <p class="lead">The people who develop and maintain the HoloRuminant tools.</p>
+  </div>
+</section>
+
+<section class="people-section">
+  <div class="wrap">
+    <ul class="people">
+      {% assign people = site.data.contributors | sort: "name" %}
+      {% for c in people %}
+      {% assign parts = c.name | split: " " %}
+      <li class="person" id="{{ c.name | slugify }}">
+        <div class="avatar" aria-hidden="true">
+          {% if c.photo %}<img src="{{ c.photo | prepend: '/assets/img/contributors/' | relative_url }}" alt="" width="72" height="72">
+          {% else %}{{ parts.first | slice: 0 }}{% if parts.size > 1 %}{{ parts.last | slice: 0 }}{% endif %}{% endif %}
+        </div>
+        <div class="person-body">
+          <h2>{{ c.name }}</h2>
+          <p class="person-meta">{% if c.role %}{{ c.role }} · {% endif %}{{ c.institute }}</p>
+          {% if c.tools and c.tools.size > 0 %}
+          <p class="person-tools">
+            <span class="sr-only">Tools: </span>
+            {% for t in c.tools %}<a class="chip" href="{{ '/' | relative_url }}#{{ t | slugify }}">{{ t }}</a>{% endfor %}
+          </p>
+          {% endif %}
+        </div>
+        {% if c.github or c.orcid or c.website %}
+        <p class="person-links">
+          {% if c.github %}<a class="button button-outline" href="https://github.com/{{ c.github }}">GitHub<span class="sr-only"> profile of {{ c.name }}</span></a>{% endif %}
+          {% if c.orcid %}<a class="button button-outline" href="https://orcid.org/{{ c.orcid }}">ORCID<span class="sr-only"> record of {{ c.name }}</span></a>{% endif %}
+          {% if c.website %}<a class="button button-outline" href="{{ c.website }}">Website<span class="sr-only"> of {{ c.name }}</span></a>{% endif %}
+        </p>
+        {% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+
+    <p class="note">Contributed to a HoloRuminant tool? Add yourself by editing <code>_data/contributors.yml</code> in the <a href="https://github.com/{{ site.repository }}#add-yourself-as-a-contributor">site repository</a>.</p>
+  </div>
+</section>

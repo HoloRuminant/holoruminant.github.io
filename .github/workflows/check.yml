@@ -14,14 +14,17 @@ jobs:
         with:
           ruby-version: "3.3"
           bundler-cache: true
-      - name: Validate tools.yml
-        run: ruby scripts/validate_tools.rb
+      - name: Validate data files
+        run: ruby scripts/validate_data.rb
       - name: Build site
         run: bundle exec jekyll build --strict_front_matter
       - name: No empty links in built output
         run: |
-          if grep -rEn 'href=("")|href=\x27\x27|href=""' _site --include=*.html; then
+          if grep -rEn "href=(\"\"|'')" _site --include=*.html; then
             echo "Empty href found"; exit 1
           fi
-      - name: Funding statement in footer
-        run: grep -q "grant agreement N° 101000213" _site/index.html
+      - name: Funding statement on every page
+        run: |
+          for f in $(find _site -name '*.html'); do
+            grep -q "grant agreement N° 101000213" "$f" || { echo "Missing funding statement: $f"; exit 1; }
+          done

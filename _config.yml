@@ -3,6 +3,7 @@ description: Open-access bioinformatic tools and workflows developed during the 
 url: https://holoruminant.github.io
 baseurl: ""
 lang: en-GB
+repository: HoloRuminant/holoruminant.github.io
 theme: null
 markdown: kramdown
 exclude:

@@ -1,0 +1,16 @@
+# One entry per contributor. See README.md for the field guide.
+# Only `name` and `institute` are required. Leave other fields blank if unknown.
+# `tools` must use tool names exactly as they appear in _data/tools.yml.
+
+- name: Chris Creevey
+  institute: Queen's University Belfast
+  role:
+  github: ChrisCreevey
+  orcid:
+  website:
+  photo:
+  tools:
+    - Clann Tree Viewer
+    - Clann BLAST Explorer
+    - Clann Pangenome Explorer
+    - Clann eDNA Explorer
