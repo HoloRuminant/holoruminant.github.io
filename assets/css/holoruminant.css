@@ -142,7 +142,6 @@ input[type="search"]:focus, select:focus { outline: 3px solid var(--lime); outli
   display: flex; flex-wrap: wrap; align-items: center; gap: .5rem;
   padding: .9rem 1.35rem 1.1rem; border-top: 1px solid var(--line);
 }
-.project-link { margin-left: auto; font-size: .8rem; color: var(--muted); }
 
 /* Footer */
 .site-footer { background: var(--black); color: #bdbbb5; padding: 1.75rem 0; }
