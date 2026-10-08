@@ -72,3 +72,5 @@ input[type="search"], select {
 .site-footer p { margin: 0; font-size: .9rem; }
 .doi { font-size: .85rem; color: var(--muted); overflow-wrap: anywhere; }
 .project-link { font-size: .9rem; }
+.header-row { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+.header-row .logo-link { flex: 0 1 380px; min-width: 0; }
