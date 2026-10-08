@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ site.title }}</title>
+  <meta name="description" content="{{ site.description }}">
+  <link rel="stylesheet" href="{{ '/assets/css/holoruminant.css' | relative_url }}">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a href="https://holoruminant.eu" class="logo-link">
+        <img src="{{ '/assets/img/holoruminant-logo.png' | relative_url }}" alt="HoloRuminant project website: understanding microbiomes of the ruminant holobiont" width="972" height="194">
+      </a>
+    </div>
+  </header>
+  <main id="main" class="wrap">
+    {{ content }}
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>This project has received funding from the European Union's Horizon 2020 research and innovation programme under grant agreement N° 101000213.</p>
+    </div>
+  </footer>
+  <script src="{{ '/assets/js/filter.js' | relative_url }}"></script>
+</body>
+</html>

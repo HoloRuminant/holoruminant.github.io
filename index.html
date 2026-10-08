@@ -1,0 +1,63 @@
+---
+layout: default
+---
+<section class="intro">
+  <h1>HoloR-tools</h1>
+  <p>HoloR-tools is a collection of open-access bioinformatic tools and workflows developed during the HoloRuminant project. They support the analysis of ruminant microbiome data, including associating microbial features with host variables, identifying beneficial microbes and building microbiome networks.</p>
+</section>
+
+<section aria-labelledby="tools-heading">
+  <h2 id="tools-heading">Tools</h2>
+
+  <form class="controls" id="controls" hidden onsubmit="return false">
+    <div class="field">
+      <label for="search">Search tools</label>
+      <input type="search" id="search" autocomplete="off">
+    </div>
+    <div class="field">
+      <label for="type-filter">Type</label>
+      <select id="type-filter">
+        <option value="">All types</option>
+        {% assign types = site.data.tools | map: "type" | uniq | sort %}
+        {% for t in types %}<option value="{{ t | downcase }}">{{ t }}</option>
+        {% endfor %}
+      </select>
+    </div>
+  </form>
+  <p class="count" id="count" aria-live="polite"></p>
+
+  <ul class="grid" id="grid">
+    {% for tool in site.data.tools %}
+    <li class="card" data-type="{{ tool.type | downcase }}" data-text="{{ tool.name | append: ' ' | append: tool.description | append: ' ' | append: tool.type | append: ' ' | append: tool.maintainer | downcase | escape }}">
+      <h3>{{ tool.name }}</h3>
+      <p class="meta">
+        <span class="tag">{{ tool.type }}</span>
+        {% if tool.status == "restricted" %}<span class="tag tag-soon">Coming soon</span>{% endif %}
+      </p>
+      <p>{{ tool.description }}</p>
+      {% if tool.maintainer %}<p class="maintainer">Contact: {{ tool.maintainer }}</p>{% endif %}
+
+      {% unless tool.status == "restricted" %}{% if tool.repo or tool.app_url %}
+      <p class="buttons">
+        {% if tool.repo %}<a class="button" href="{{ tool.repo }}">Source repository<span class="sr-only"> for {{ tool.name }}</span></a>{% endif %}
+        {% if tool.app_url %}<a class="button" href="{{ tool.app_url }}">Open app<span class="sr-only"> for {{ tool.name }}</span></a>{% endif %}
+      </p>
+      {% endif %}{% endunless %}
+
+      {% if tool.papers and tool.papers.size > 0 %}
+      <h4>Publications and records</h4>
+      <ul class="papers">
+        {% for p in tool.papers %}
+        <li>
+          {% if p.kind == "in-preparation" %}{{ p.label }} (in preparation)
+          {% elsif p.doi %}<a href="https://doi.org/{{ p.doi }}">{{ p.label }}</a> <span class="kind">({{ p.kind }})</span>
+          {% elsif p.url %}<a href="{{ p.url }}">{{ p.label }}</a> <span class="kind">({{ p.kind }})</span>
+          {% else %}{{ p.label }} <span class="kind">({{ p.kind }})</span>{% endif %}
+        </li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+</section>

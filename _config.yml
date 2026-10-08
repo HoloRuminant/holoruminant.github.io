@@ -1,0 +1,15 @@
+title: HoloRuminant tools
+description: Open-access bioinformatic tools and workflows developed during the HoloRuminant project.
+url: https://holoruminant.github.io
+baseurl: ""
+lang: en-GB
+theme: null
+markdown: kramdown
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - LICENSE
+  - scripts
+  - vendor
+  - .github

@@ -1,0 +1,103 @@
+- name: NNforge
+  description: Trains an artificial neural network on 16S rRNA gene data to predict genome-scale metabolic models for microbes. It makes metabolic modelling possible from metataxonomic data when metagenomic sequence data is not available.
+  type: Tool
+  status: available
+  maintainer:
+  repo: https://gitlab.com/oveoyas/nnforge
+  app_url:
+  papers:
+    - label: Øyås et al. 2024
+      kind: preprint
+      doi: 10.1101/2024.01.26.576649
+
+- name: Snakebite-Holoruminant-Meta
+  description: A Snakemake metagenomic pipeline covering read-based analysis, contig-based analysis, and MAG assembly and annotation. It uses a broad set of annotators and public databases, and suits users who do not know every individual tool.
+  type: Workflow
+  status: available
+  maintainer:
+  repo: https://github.com/fischuu/Snakebite-Holoruminant-MetaG
+  app_url:
+  papers:
+    - label: Manuscript in preparation
+      kind: in-preparation
+
+- name: CompareM2
+  description: A genomes-to-report pipeline for microbial genomics. It analyses assemblies of isolates and metagenomes (MAGs) and produces a report with publication-ready figures.
+  type: Pipeline
+  status: available
+  maintainer:
+  repo: https://github.com/cmkobel/CompareM2
+  app_url:
+  papers:
+    - label: Kobel et al. 2025
+      kind: publication
+      doi: 10.1093/bioinformatics/btaf517
+
+- name: FANCY
+  description: An R package that infers association networks. It combines k-nearest neighbour mutual information (via MRNET) and distance correlation into one hybrid edge score. It was designed for MAG co-abundance networks and works with any numeric feature matrix.
+  type: R package
+  status: available
+  maintainer:
+  repo: https://github.com/wala-github/Fancy
+  app_url:
+  papers:
+    - label: Lai et al. 2026
+      kind: publication
+      url: https://open-research-europe.ec.europa.eu/articles/6-381
+
+- name: CowPI2
+  description: A command line tool for functional prediction from 16S rRNA gene microbiome data. It uses curated, environment-specific HoloRuminant MAG data. Described in Deliverable D1.5.
+  type: Tool
+  status: restricted
+  maintainer:
+  repo:
+  app_url:
+  papers: []
+
+- name: Clann Tree Viewer
+  description: An interactive viewer for phylogenetic trees in Newick, NEXUS and NHX formats, including Clann reconciliations. It runs entirely in the browser and no data leave the user's computer. Designed mainly for teaching.
+  type: Web app
+  status: available
+  maintainer:
+  repo:
+  app_url: https://chriscreevey.github.io/clann-tree-viewer/
+  papers:
+    - label: Zenodo record
+      kind: software
+      doi: 10.5281/zenodo.22871890
+
+- name: Clann BLAST Explorer
+  description: An explorer for BLAST (-outfmt 6/7) and DIAMOND tabular output. It provides hit tables, HSP coverage diagrams, taxonomy assignment, reciprocal best hit analysis and FASTA export. All analysis runs in the browser with no data upload.
+  type: Web app
+  status: available
+  maintainer:
+  repo:
+  app_url: https://chriscreevey.github.io/clann-blast-explorer/
+  papers:
+    - label: Zenodo record
+      kind: software
+      doi: 10.5281/zenodo.22871507
+
+- name: Clann Pangenome Explorer
+  description: Joins pangenome matrices from Roary, Panaroo, PIRATE or PanACoTA with gene annotations and CoinFinder results. It summarises core and accessory genome structure, tags AMR or virulence genes and visualises association networks. All analysis runs in the browser.
+  type: Web app
+  status: available
+  maintainer:
+  repo:
+  app_url: https://chriscreevey.github.io/clann-pangenome-explorer/
+  papers:
+    - label: Zenodo record
+      kind: software
+      doi: 10.5281/zenodo.22871457
+
+- name: Clann eDNA Explorer
+  description: An explorer for taxonomic classification results from eDNA metabarcoding and metagenomic studies. It accepts Kraken2/Bracken, QIIME 2 and lineage tables, and produces sunburst and Sankey diagrams, heatmaps, diversity indices and similarity measures. All processing runs in the browser.
+  type: Web app
+  status: available
+  maintainer:
+  repo:
+  app_url: https://chriscreevey.github.io/clann-edna-explorer/
+  papers:
+    - label: Zenodo record
+      kind: software
+      doi: 10.5281/zenodo.22662075
