@@ -70,3 +70,5 @@ input[type="search"], select {
 
 .site-footer { margin-top: 3rem; background: var(--ink); color: #fff; padding: 1.25rem 0; border-top: 6px solid var(--lime); }
 .site-footer p { margin: 0; font-size: .9rem; }
+.doi { font-size: .85rem; color: var(--muted); overflow-wrap: anywhere; }
+.project-link { font-size: .9rem; }

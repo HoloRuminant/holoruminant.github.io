@@ -59,7 +59,7 @@
   type: Web app
   status: available
   maintainer:
-  repo:
+  repo: https://github.com/ChrisCreevey/clann-tree-viewer
   app_url: https://chriscreevey.github.io/clann-tree-viewer/
   papers:
     - label: Zenodo record
@@ -71,7 +71,7 @@
   type: Web app
   status: available
   maintainer:
-  repo:
+  repo: https://github.com/ChrisCreevey/clann-blast-explorer
   app_url: https://chriscreevey.github.io/clann-blast-explorer/
   papers:
     - label: Zenodo record
@@ -83,7 +83,7 @@
   type: Web app
   status: available
   maintainer:
-  repo:
+  repo: https://github.com/ChrisCreevey/clann-pangenome-explorer
   app_url: https://chriscreevey.github.io/clann-pangenome-explorer/
   papers:
     - label: Zenodo record
@@ -95,7 +95,7 @@
   type: Web app
   status: available
   maintainer:
-  repo:
+  repo: https://github.com/ChrisCreevey/clann-edna-explorer
   app_url: https://chriscreevey.github.io/clann-edna-explorer/
   papers:
     - label: Zenodo record
