@@ -43,7 +43,7 @@
   papers:
     - label: Lai et al. 2026
       kind: publication
-      url: https://open-research-europe.ec.europa.eu/articles/6-381
+      doi: 10.12688/openreseurope.24421.1
 
 - name: CowPI2
   description: A command line tool for functional prediction from 16S rRNA gene microbiome data. It uses curated, environment-specific HoloRuminant MAG data. Described in Deliverable D1.5.
