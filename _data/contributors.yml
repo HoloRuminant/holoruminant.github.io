@@ -4,7 +4,7 @@
 
 - name: Chris Creevey
   institute: Queen's University Belfast
-  role:
+  role: Professor of Computational Biology
   github: ChrisCreevey
   orcid: 0000-0001-7183-1555
   website: https://creeveylab.org
@@ -14,3 +14,21 @@
     - Clann BLAST Explorer
     - Clann Pangenome Explorer
     - Clann eDNA Explorer
+- name: Daniel Fischer
+  institute: Luonnonvarakeskus / Natural Resources Institute Finland (Luke) for Bioinformatics and Biostatistics
+  role: 
+  github: fischuu
+  orcid: 
+  website:
+  photo:
+  tools:
+    - Snakebite-Holoruminant-Meta
+- name: Jérémy Tournayre
+  institute: INRAE
+  role: Bioinformatician
+  github: JeremyTournayre
+  orcid: 0000-0002-5532-3793
+  website:
+  photo:
+  tools:
+    - Snakebite-Holoruminant-Meta
